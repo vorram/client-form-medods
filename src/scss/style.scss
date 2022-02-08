@@ -5,7 +5,8 @@ $form-bg: #cbd5e1;
 $fieldset-bg: #fff;
 $legeng-bg: #e2e8f0;
 $border-col: #94a3b8;
-$checkbox-container: 'label[for=' sms ']';
+$checkbox-container: 'label[for=' no-sms ']';
+$error-color: #fca5a5;
 
 * {
   box-sizing: border-box;
@@ -60,7 +61,12 @@ $checkbox-container: 'label[for=' sms ']';
   label {
     display: inline-block;
     font-size: 1.5rem;
-    margin: 12px 0;
+    margin: 16px 0;
+  }
+
+  input {
+    position: relative;
+    z-index: 1;
   }
 
   input[type='text'],
@@ -71,7 +77,7 @@ $checkbox-container: 'label[for=' sms ']';
     display: block;
     font-size: 1.5rem;
     background-color: $fieldset-bg;
-    border: 1px inset $border-col;
+    border: 1px solid $border-col;
     border-radius: 4px;
     padding: 8px;
   }
@@ -100,10 +106,13 @@ $checkbox-container: 'label[for=' sms ']';
   select {
     display: block;
     margin: 0 auto;
-    width: fit-content;
+    width: 170px;
     height: 40px;
     background: $fieldset-bg;
     font-size: 1rem;
+    border: 1px solid $border-col;
+    position: relative;
+    z-index: 1;
   }
 
   select[multiple] {
@@ -196,6 +205,10 @@ $checkbox-container: 'label[for=' sms ']';
     }
   }
 
+  select[name='document'] {
+    width: 220px;
+  }
+
   input[name='docSeries'] {
     width: 80px;
     text-align: center;
@@ -218,6 +231,58 @@ $checkbox-container: 'label[for=' sms ']';
 
   input[type='submit']:hover {
     background: #0ea5e9;
+  }
+
+  %error {
+    background: $error-color;
+    font-size: 0.7rem;
+    text-align: start;
+    padding: 4px;
+    color: #44403c;
+    position: relative;
+    z-index: 0;
+    border-radius: 4px;
+    margin: -2px auto;
+  }
+
+  .error-text {
+    @extend %error;
+    width: 80%;
+  }
+  .error-date,
+  .error-phone,
+  .error-group {
+    @extend %error;
+    width: 170px;
+    text-align: center;
+  }
+
+  .error-document {
+    @extend %error;
+    width: 220px;
+  }
+
+  .error-zip,
+  .error-house {
+    @extend %error;
+    width: 120px;
+    text-align: center;
+  }
+
+  .error-series {
+    @extend %error;
+    width: 80px;
+    text-align: center;
+  }
+
+  .submit-error {
+    background: $error-color;
+    font-size: 1rem;
+    text-align: center;
+    padding: 4px;
+    color: #44403c;
+    border-radius: 4px;
+    margin: 12px auto;
   }
 }
 
