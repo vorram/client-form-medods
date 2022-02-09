@@ -373,6 +373,7 @@ export default {
         this.$v.$reset()
         this.$el.reset()
         Object.assign(this.$data, resetData())
+        this.$emit('form-submit')
       }
     },
   },

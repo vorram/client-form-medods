@@ -18,9 +18,11 @@ $error-color: #fca5a5;
   font-family: $font-stack;
   background: center / cover url('../assets/background.jpg');
   padding: 40px 0;
+  min-height: 100vh;
 }
 
-.new-client-form {
+.new-client-form,
+.submit-message {
   width: 500px;
   margin: 0 auto;
   padding: 20px;
@@ -219,7 +221,8 @@ $error-color: #fca5a5;
     text-align: center;
   }
 
-  input[type='submit'] {
+  input[type='submit'],
+  button {
     margin: 20px auto 0;
     padding: 8px;
     font-size: 2em;
@@ -229,8 +232,10 @@ $error-color: #fca5a5;
     border-radius: 4px;
   }
 
-  input[type='submit']:hover {
+  input[type='submit']:hover,
+  button:hover {
     background: #0ea5e9;
+    cursor: pointer;
   }
 
   %error {
@@ -286,13 +291,34 @@ $error-color: #fca5a5;
   }
 }
 
+.submit-message {
+  .message-container {
+    padding: 20px;
+    background-color: $fieldset-bg;
+
+    .message {
+      background: #22c55e;
+      color: #fff;
+      font-size: 1.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      padding: 20px 0;
+    }
+  }
+}
+
 @media (max-width: 550px) {
   #app {
-    background: none;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
-  .new-client-form {
+  .new-client-form,
+  .submit-message {
     width: 100vw;
 
     input[name='zipCode'],
@@ -304,6 +330,11 @@ $error-color: #fca5a5;
     input[name='country'],
     input[name='street'] {
       width: 200px;
+    }
+
+    .message {
+      text-align: center;
+      flex-direction: column;
     }
   }
 }
