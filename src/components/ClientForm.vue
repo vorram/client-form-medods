@@ -353,7 +353,6 @@ export default {
     },
     setDocNumber(value) {
       this.docNumber = value
-      this.$v.docNumber.$touch()
     },
     setIssuedBy(value) {
       this.issuedBy = value
