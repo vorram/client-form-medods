@@ -292,7 +292,7 @@ export default {
       this.$v.firstName.$touch()
     },
     setMiddleName(value) {
-      this.lastName = value
+      this.middleName = value
     },
     setDOB(value) {
       this.dob = value
@@ -321,7 +321,6 @@ export default {
     },
     setNoSMS(value) {
       this.noSMS = value
-      console.log(this.noSMS)
     },
     setZipCode(value) {
       this.zipCode = value
