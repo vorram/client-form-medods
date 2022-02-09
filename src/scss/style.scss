@@ -322,7 +322,9 @@ $error-color: #fca5a5;
     width: 100vw;
 
     input[name='zipCode'],
-    input[name='house'] {
+    input[name='house'],
+    .error-zip,
+    .error-house {
       width: 100px;
       text-align: center;
     }
